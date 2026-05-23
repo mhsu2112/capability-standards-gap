@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nuclear power: the negative case — arrested growth and tombstone consortiums</title>
+<style>
+:root {
+    --color-text-primary: #1a1a1a;
+    --color-text-secondary: #5f5e5a;
+    --color-text-tertiary: #888780;
+    --color-border-tertiary: rgba(0,0,0,0.10);
+    --color-border-secondary: rgba(0,0,0,0.20);
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #fdfdfd;
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+    font-size: 13px;
+    line-height: 1.5;
+}
+body {
+    padding: 2rem 1.5rem;
+}
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.title-block {
+    margin-bottom: 1.5rem;
+}
+.title {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: var(--color-text-primary);
+}
+.subtitle {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+}
+.grid {
+    display: grid;
+    grid-template-columns: 70px 200px 200px 200px 180px minmax(160px, 1fr);
+    gap: 0;
+    align-items: stretch;
+}
+.h {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 0 0 10px 8px;
+    border-bottom: 0.5px solid var(--color-border-secondary);
+}
+.h-year { padding-left: 0; color: var(--color-text-secondary); }
+.h-inn { color: #085041; }
+.h-con { color: #3C3489; }
+.h-inc { color: #712B13; }
+.h-reg { color: #0C447C; }
+.h-bar { color: var(--color-text-secondary); }
+.year {
+    font-size: 13px;
+    padding: 10px 0;
+    border-bottom: 0.5px solid var(--color-border-tertiary);
+    color: var(--color-text-secondary);
+}
+.cell {
+    font-size: 13px;
+    padding: 10px 0 10px 8px;
+    border-bottom: 0.5px solid var(--color-border-tertiary);
+}
+.cell-empty {
+    border-bottom: 0.5px solid var(--color-border-tertiary);
+}
+.cell-inn { color: #085041; }
+.cell-con { color: #3C3489; }
+.cell-inc { color: #712B13; }
+.cell-reg { color: #0C447C; }
+.bar-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0 10px 8px;
+    border-bottom: 0.5px solid var(--color-border-tertiary);
+}
+.bar-cell-last {
+    border-bottom: none;
+}
+.bar {
+    height: 12px;
+    background: #888780;
+    min-width: 2px;
+}
+.bar-label {
+    font-size: 11px;
+    color: var(--color-text-secondary);
+}
+.last-row .cell, .last-row .year, .last-row .cell-empty {
+    border-bottom: none;
+}
+.italic-muted {
+    color: var(--color-text-tertiary);
+    font-style: italic;
+}
+.era-note {
+    font-size: 11px;
+    color: var(--color-text-tertiary);
+    font-style: italic;
+    grid-column: 1 / -1;
+    padding: 14px 0 6px 0;
+    border-bottom: 0.5px solid var(--color-border-tertiary);
+}
+.footnote {
+    margin-top: 1.5rem;
+    font-size: 11px;
+    color: var(--color-text-tertiary);
+    font-style: italic;
+    max-width: 800px;
+    line-height: 1.6;
+}
+.framing {
+    background: #f7f6f1;
+    border-left: 3px solid #5F5E5A;
+    padding: 12px 16px;
+    margin-bottom: 1.5rem;
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}
+.framing strong {
+    color: var(--color-text-primary);
+    font-weight: 500;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="title-block">
+    <div class="title">Nuclear power: the negative case — arrested growth and tombstone consortiums</div>
+    <div class="subtitle">Innovations, consortiums, incidents, and regulations plotted against US installed nuclear capacity (gigawatts)</div>
+</div>
+
+<div class="framing">
+US civilian nuclear power was widely expected, in the 1950s and 1960s, to dominate electricity generation by the end of the century. It did not. Joseph V. Rees's <em>Hostages of Each Other</em> (Chicago, 1994) documents the surprising success of INPO as a "<strong>communitarian regulation</strong>" body — but INPO was created in <em>December 1979, nine months after Three Mile Island</em>, and was scoped narrowly to operational safety. It is the textbook tombstone consortium. The middle-governance layer that might have addressed the broader liftoff barriers — public-trust collapse, capital-cost compounding, siting and licensing fragmentation, waste storage — never cohered. No pre-incident industry-government coordination body ever existed at the scale of CAST (aviation) or DTCC (finance) or IETF (communications). Growth arrested in the early 1990s and the US fleet has slightly contracted since. This is the negative case: a sector where the engineering worked, the early policy worked (Atoms for Peace, Price-Anderson), but the middle-layer institutional plumbing was either absent or built too late.
+</div>
+
+<div class="grid">
+
+    <div class="h h-year">Year</div>
+    <div class="h h-inn">Innovation / policy launch</div>
+    <div class="h h-con">Consortium / industry body</div>
+    <div class="h h-inc">Incident</div>
+    <div class="h h-reg">Regulation</div>
+    <div class="h h-bar">US installed capacity (GW)</div>
+
+    <div class="era-note">Liftoff era (1953–1977): rapid growth on early policy architecture, no industry coordination layer</div>
+
+    <div class="year">1953</div>
+    <div class="cell cell-inn">Atoms for Peace (Eisenhower UN speech)</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:0.1%;"></div><span class="bar-label">~0</span></div>
+
+    <div class="year">1954</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-reg">Atomic Energy Act amended (private nuclear authorized)</div>
+    <div class="bar-cell"><div class="bar" style="width:0.1%;"></div><span class="bar-label">~0</span></div>
+
+    <div class="year">1957</div>
+    <div class="cell cell-inn">Shippingport reactor (first commercial)</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-reg">Price-Anderson Act (liability backstop)</div>
+    <div class="bar-cell"><div class="bar" style="width:0.1%;"></div><span class="bar-label">0.06</span></div>
+
+    <div class="year">1961</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-inc">SL-1 reactor explosion, Idaho Falls (3 killed)</div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:0.3%;"></div><span class="bar-label">0.3</span></div>
+
+    <div class="year">1966</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-inc">Fermi 1 partial meltdown, Michigan</div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:3.0%;"></div><span class="bar-label">3</span></div>
+
+    <div class="year">1967</div>
+    <div class="cell cell-inn">Major orders begin (1000+ MWe class)</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:5.0%;"></div><span class="bar-label">5</span></div>
+
+    <div class="year">1974</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-reg">Energy Reorganization Act; AEC split into NRC and ERDA</div>
+    <div class="bar-cell"><div class="bar" style="width:34.7%;"></div><span class="bar-label">35</span></div>
+
+    <div class="year">1977</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-reg">Last new construction permit (until 2012)</div>
+    <div class="bar-cell"><div class="bar" style="width:54.5%;"></div><span class="bar-label">55</span></div>
+
+    <div class="era-note">Tombstone era (1979–1989): industry coordination forms post-incident, scoped only to operational safety</div>
+
+    <div class="year">1979</div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-con">INPO founded (December, post-TMI)</div>
+    <div class="cell cell-inc">Three Mile Island partial meltdown</div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:64.4%;"></div><span class="bar-label">65</span></div>
+
+    <div class="year">1980</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-reg">NRC rule overhaul; emergency planning mandates</div>
+    <div class="bar-cell"><div class="bar" style="width:70.0%;"></div><span class="bar-label">71</span></div>
+
+    <div class="year">1985</div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-con">INPO National Academy for Nuclear Training</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:83.2%;"></div><span class="bar-label">84</span></div>
+
+    <div class="year">1986</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-inc">Chernobyl (USSR; global public-trust shock)</div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:88.1%;"></div><span class="bar-label">89</span></div>
+
+    <div class="year">1989</div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-con">WANO founded (international, post-Chernobyl)</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:93.1%;"></div><span class="bar-label">94</span></div>
+
+    <div class="era-note">Arrested growth (1990–present): no new construction; system size flat for 35 years</div>
+
+    <div class="year">1990</div>
+    <div class="cell cell-inn">US fleet effectively complete (last pre-TMI orders finish)</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:98.0%;"></div><span class="bar-label">99</span></div>
+
+    <div class="year">2005</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-reg">Energy Policy Act; production tax credit for new builds</div>
+    <div class="bar-cell"><div class="bar" style="width:99.0%;"></div><span class="bar-label">100</span></div>
+
+    <div class="year">2011</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-inc">Fukushima (Japan; further public-trust shock)</div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:100%;"></div><span class="bar-label">101</span></div>
+
+    <div class="year">2016</div>
+    <div class="cell cell-inn">Watts Bar 2 starts (first new reactor since 1996)</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:98.0%;"></div><span class="bar-label">99</span></div>
+
+    <div class="year">2023</div>
+    <div class="cell cell-inn">Vogtle 3 &amp; 4 online (first new construction in 30+ years)</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:96.0%;"></div><span class="bar-label">97</span></div>
+
+    <div class="year last-row" style="border-bottom:none;">2025</div>
+    <div class="cell last-row italic-muted" style="border-bottom:none;">(SMR push, AI datacenter demand)</div>
+    <div class="cell-empty last-row" style="border-bottom:none;"></div>
+    <div class="cell-empty last-row" style="border-bottom:none;"></div>
+    <div class="cell-empty last-row" style="border-bottom:none;"></div>
+    <div class="bar-cell bar-cell-last"><div class="bar" style="width:95.0%;"></div><span class="bar-label">96</span></div>
+
+</div>
+
+<div class="footnote">
+Framework: Joseph V. Rees, <em>Hostages of Each Other: The Transformation of Nuclear Safety Since Three Mile Island</em> (University of Chicago Press, 1994). Rees treats INPO as a successful case of industry self-regulation under the "communitarian regulation" model — every plant's license is hostage to every other plant's safety performance. The negative-case argument here builds on Rees: INPO's success at operational safety did <em>not</em> translate into broader sector liftoff because (a) the body was created post-incident rather than proactively, (b) its scope was narrow (operations and training, not licensing, siting, capital coordination, or public-trust building), and (c) it operated alongside an NRC that was increasingly oriented to permitting friction. Capacity data: US Energy Information Administration historical electric power monthly; pre-1970 from EIA historical statistics. Bar widths normalized to peak 2011 capacity of ~101 GW. Bar lengths slightly understate the gap between expected and realized liftoff: 1970s projections from the AEC anticipated 1,000+ GW of US nuclear capacity by 2000.
+</div>
+
+</div>
+</body>
+</html>

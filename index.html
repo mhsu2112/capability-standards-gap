@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Capability and Standards Gap — Four-Lane Schematics</title>
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --muted: #555;
+    --rule: #e0e0e0;
+    --link: #0a4d8c;
+    --link-hover: #06325c;
+    --bg: #fafaf8;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+  }
+  h1 {
+    font-size: 1.85rem;
+    font-weight: 600;
+    margin: 0 0 8px;
+    letter-spacing: -0.01em;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-size: 1.05rem;
+    margin: 0 0 40px;
+    font-style: italic;
+  }
+  ul.schematics {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid var(--rule);
+  }
+  ul.schematics li {
+    border-bottom: 1px solid var(--rule);
+    padding: 20px 0;
+  }
+  ul.schematics a {
+    color: var(--link);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    display: block;
+    line-height: 1.4;
+  }
+  ul.schematics a:hover,
+  ul.schematics a:focus {
+    color: var(--link-hover);
+    text-decoration: underline;
+  }
+  .sector {
+    display: block;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    font-weight: 600;
+    margin-bottom: 4px;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  }
+  footer {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+<main>
+  <h1>The Capability and Standards Gap</h1>
+  <p class="subtitle">Four-lane schematics of how capability, standards, and oversight have co-evolved across four sectors.</p>
+
+  <ul class="schematics">
+    <li>
+      <a href="aviation.html">
+        <span class="sector">Aviation</span>
+        The tombstone agency pattern against a 2,500&times; growing system
+      </a>
+    </li>
+    <li>
+      <a href="finance.html">
+        <span class="sector">Finance</span>
+        The Quiet Period and the architecture of co-regulation
+      </a>
+    </li>
+    <li>
+      <a href="communications.html">
+        <span class="sector">Communications</span>
+        Three Spar cycles, with industry rule-making increasingly dominant
+      </a>
+    </li>
+    <li>
+      <a href="nuclear.html">
+        <span class="sector">Nuclear power</span>
+        The negative case &mdash; arrested growth and tombstone consortiums
+      </a>
+    </li>
+  </ul>
+
+  <footer>
+    Companion schematics to the essay. Each page is a self-contained diagram.
+  </footer>
+</main>
+</body>
+</html>

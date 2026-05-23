@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aviation: the tombstone agency pattern against a 2,500× growing system</title>
+<style>
+:root {
+    --color-text-primary: #1a1a1a;
+    --color-text-secondary: #5f5e5a;
+    --color-text-tertiary: #888780;
+    --color-border-tertiary: rgba(0,0,0,0.10);
+    --color-border-secondary: rgba(0,0,0,0.20);
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #fdfdfd;
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+    font-size: 13px;
+    line-height: 1.5;
+}
+body {
+    padding: 2rem 1.5rem;
+}
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.title-block {
+    margin-bottom: 1.5rem;
+}
+.title {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: var(--color-text-primary);
+}
+.subtitle {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+}
+.grid {
+    display: grid;
+    grid-template-columns: 70px 180px 180px 200px 200px minmax(180px, 1fr);
+    gap: 0;
+    align-items: stretch;
+}
+.h {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 0 0 10px 8px;
+    border-bottom: 0.5px solid var(--color-border-secondary);
+}
+.h-year { padding-left: 0; color: var(--color-text-secondary); }
+.h-inn { color: #085041; }
+.h-con { color: #3C3489; }
+.h-inc { color: #712B13; }
+.h-reg { color: #0C447C; }
+.h-bar { color: var(--color-text-secondary); }
+.year {
+    font-size: 13px;
+    padding: 10px 0;
+    border-bottom: 0.5px solid var(--color-border-tertiary);
+    color: var(--color-text-secondary);
+}
+.cell {
+    font-size: 13px;
+    padding: 10px 0 10px 8px;
+    border-bottom: 0.5px solid var(--color-border-tertiary);
+}
+.cell-empty {
+    border-bottom: 0.5px solid var(--color-border-tertiary);
+}
+.cell-inn { color: #085041; }
+.cell-con { color: #3C3489; }
+.cell-inc { color: #712B13; }
+.cell-reg { color: #0C447C; }
+.bar-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0 10px 8px;
+    border-bottom: 0.5px solid var(--color-border-tertiary);
+}
+.bar-cell-last {
+    border-bottom: none;
+}
+.bar {
+    height: 12px;
+    background: #888780;
+    min-width: 2px;
+}
+.bar-label {
+    font-size: 11px;
+    color: var(--color-text-secondary);
+}
+.last-row .cell, .last-row .year, .last-row .cell-empty {
+    border-bottom: none;
+}
+.italic-muted {
+    color: var(--color-text-tertiary);
+    font-style: italic;
+}
+.era-note {
+    font-size: 11px;
+    color: var(--color-text-tertiary);
+    font-style: italic;
+    grid-column: 1 / -1;
+    padding: 14px 0 6px 0;
+    border-bottom: 0.5px solid var(--color-border-tertiary);
+}
+.footnote {
+    margin-top: 1.5rem;
+    font-size: 11px;
+    color: var(--color-text-tertiary);
+    font-style: italic;
+    max-width: 800px;
+    line-height: 1.6;
+}
+.framing {
+    background: #f7f6f1;
+    border-left: 3px solid #5F5E5A;
+    padding: 12px 16px;
+    margin-bottom: 1.5rem;
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}
+.framing strong {
+    color: var(--color-text-primary);
+    font-weight: 500;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="title-block">
+    <div class="title">Aviation: the tombstone agency pattern against a 2,500× growing system</div>
+    <div class="subtitle">Innovations, consortiums, incidents, and regulations plotted against US airline revenue passenger miles (annual)</div>
+</div>
+
+<div class="framing">
+NTSB board member James B. King first used the term <strong>"tombstone agency"</strong> in 1977 to describe the FAA's pattern of enacting safety reform only after catastrophic accidents. The phrase was popularized by DOT Inspector General Mary Schiavo after the 1996 ValuJet 592 crash and tested empirically by Lutte and Bowen (2000), who found FAA rulemaking activity rises sharply in the months after major US accidents and decays in between. Each major regulatory action in this panel corresponds to a specific crash. The rare exceptions — the industry-led consortiums (ARINC, RTCA, IATA, CAST) and the international Chicago Convention — represent the <em>anti-tombstone</em> model: pre-incident coordination on technical standards and shared infrastructure.
+</div>
+
+<div class="grid">
+
+    <div class="h h-year">Year</div>
+    <div class="h h-inn">Innovation</div>
+    <div class="h h-con">Consortium / industry rules</div>
+    <div class="h h-inc">Incident</div>
+    <div class="h h-reg">Regulation</div>
+    <div class="h h-bar">System size (annual RPMs)</div>
+
+    <div class="era-note">Pre-jet era (1903–1944): industry capability grows; institutions emerge alongside</div>
+
+    <div class="year">1903</div>
+    <div class="cell cell-inn">Wright first flight</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:0.1%;"></div><span class="bar-label">~0</span></div>
+
+    <div class="year">1925</div>
+    <div class="cell cell-inn">Air mail expansion (Kelly Act)</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:0.1%;"></div><span class="bar-label">~0</span></div>
+
+    <div class="year">1926</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-reg">Air Commerce Act</div>
+    <div class="bar-cell"><div class="bar" style="width:0.1%;"></div><span class="bar-label">0.01B</span></div>
+
+    <div class="year">1929</div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-con">ARINC founded</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:0.1%;"></div><span class="bar-label">0.05B</span></div>
+
+    <div class="year">1931</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-inc">Rockne TWA Fokker crash</div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:0.1%;"></div><span class="bar-label">0.12B</span></div>
+
+    <div class="year">1935</div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-con">RTCA founded</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:0.1%;"></div><span class="bar-label">0.3B</span></div>
+
+    <div class="year">1936</div>
+    <div class="cell cell-inn">DC-3 enters service</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:0.1%;"></div><span class="bar-label">0.4B</span></div>
+
+    <div class="year">1938</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-reg">Civil Aeronautics Act, CAA</div>
+    <div class="bar-cell"><div class="bar" style="width:0.1%;"></div><span class="bar-label">0.5B</span></div>
+
+    <div class="year">1944</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-reg">Chicago Convention, ICAO</div>
+    <div class="bar-cell"><div class="bar" style="width:0.2%;"></div><span class="bar-label">2B</span></div>
+
+    <div class="year">1945</div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-con">IATA founded</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:0.3%;"></div><span class="bar-label">3B</span></div>
+
+    <div class="era-note">Jet age and institutional consolidation (1956–1978): tombstone pattern crystallizes</div>
+
+    <div class="year">1956</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-inc">Grand Canyon mid-air, 128 dead</div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:2.0%;"></div><span class="bar-label">22B</span></div>
+
+    <div class="year">1958</div>
+    <div class="cell cell-inn">Boeing 707, jet age</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-reg">FAA created</div>
+    <div class="bar-cell"><div class="bar" style="width:2.3%;"></div><span class="bar-label">26B</span></div>
+
+    <div class="year">1967</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-inc">Piedmont 22 mid-air, 82 dead</div>
+    <div class="cell cell-reg">NTSB created within DOT</div>
+    <div class="bar-cell"><div class="bar" style="width:6.9%;"></div><span class="bar-label">76B</span></div>
+
+    <div class="year">1970</div>
+    <div class="cell cell-inn">Boeing 747, wide-body</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:9.9%;"></div><span class="bar-label">109B</span></div>
+
+    <div class="year">1974</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-reg">NTSB made independent (Pub. L. 93-633)</div>
+    <div class="bar-cell"><div class="bar" style="width:14.7%;"></div><span class="bar-label">162B</span></div>
+
+    <div class="year">1978</div>
+    <div class="cell cell-inn">Hub-and-spoke, low-cost</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-reg">Airline Deregulation Act</div>
+    <div class="bar-cell"><div class="bar" style="width:19.7%;"></div><span class="bar-label">217B</span></div>
+
+    <div class="era-note">Mature system (1996–present): tombstone pattern under pressure; industry consortiums emerge</div>
+
+    <div class="year">1996</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-inc">ValuJet 592, 110 dead</div>
+    <div class="cell cell-reg">FAA dual-mandate ended; safety becomes primary</div>
+    <div class="bar-cell"><div class="bar" style="width:52.7%;"></div><span class="bar-label">580B</span></div>
+
+    <div class="year">1998</div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-con">CAST founded (industry-gov't safety team)</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:56.5%;"></div><span class="bar-label">622B</span></div>
+
+    <div class="year">2001</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-inc">9/11 attacks, 246 on aircraft</div>
+    <div class="cell cell-reg">Aviation Security Act, TSA</div>
+    <div class="bar-cell"><div class="bar" style="width:59.2%;"></div><span class="bar-label">651B</span></div>
+
+    <div class="year">2014</div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-con">A-ISAC founded</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:81.3%;"></div><span class="bar-label">894B</span></div>
+
+    <div class="year">2018–19</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-inc">737 MAX crashes, 346 dead</div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:99.1%;"></div><span class="bar-label">1.09T</span></div>
+
+    <div class="year">2020</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-reg">Aircraft Certification Reform Act</div>
+    <div class="bar-cell"><div class="bar" style="width:34.5%;"></div><span class="bar-label">380B</span></div>
+
+    <div class="year last-row" style="border-bottom:none;">2025</div>
+    <div class="cell last-row italic-muted" style="border-bottom:none;">(present)</div>
+    <div class="cell-empty last-row" style="border-bottom:none;"></div>
+    <div class="cell-empty last-row" style="border-bottom:none;"></div>
+    <div class="cell-empty last-row" style="border-bottom:none;"></div>
+    <div class="bar-cell bar-cell-last"><div class="bar" style="width:100%;"></div><span class="bar-label">1.1T</span></div>
+
+</div>
+
+<div class="footnote">
+Framework: the "tombstone agency" concept originated with NTSB board member James B. King (1977) and was tested empirically in Rebecca K. Lutte and Brent D. Bowen, "The FAA: A Tombstone Agency? Putting the Nickname to the Test," <em>Collegiate Aviation Review</em> 18:1 (2000). Diane Vaughan's <em>The Challenger Launch Decision</em> (University of Chicago Press, 1996) supplies the complementary "normalization of deviance" framework applicable to the 737 MAX MCAS certification failures. RPM data: pre-1960 from the BTS historical airmiles compilation (sourced from Statistical Abstracts); 1960–2000 from BTS National Transportation Statistics; 2000–present from FRED series RPM. Bar widths use a linear scale with a 2px floor for visibility.
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Finance: the Quiet Period and the architecture of co-regulation</title>
+<style>
+:root {
+    --color-text-primary: #1a1a1a;
+    --color-text-secondary: #5f5e5a;
+    --color-text-tertiary: #888780;
+    --color-border-tertiary: rgba(0,0,0,0.10);
+    --color-border-secondary: rgba(0,0,0,0.20);
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #fdfdfd;
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+    font-size: 13px;
+    line-height: 1.5;
+}
+body {
+    padding: 2rem 1.5rem;
+}
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.title-block {
+    margin-bottom: 1.5rem;
+}
+.title {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: var(--color-text-primary);
+}
+.subtitle {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+}
+.grid {
+    display: grid;
+    grid-template-columns: 70px 180px 200px 200px 200px minmax(160px, 1fr);
+    gap: 0;
+    align-items: stretch;
+}
+.h {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 0 0 10px 8px;
+    border-bottom: 0.5px solid var(--color-border-secondary);
+}
+.h-year { padding-left: 0; color: var(--color-text-secondary); }
+.h-inn { color: #085041; }
+.h-con { color: #3C3489; }
+.h-inc { color: #712B13; }
+.h-reg { color: #0C447C; }
+.h-bar { color: var(--color-text-secondary); }
+.year {
+    font-size: 13px;
+    padding: 10px 0;
+    border-bottom: 0.5px solid var(--color-border-tertiary);
+    color: var(--color-text-secondary);
+}
+.cell {
+    font-size: 13px;
+    padding: 10px 0 10px 8px;
+    border-bottom: 0.5px solid var(--color-border-tertiary);
+}
+.cell-empty {
+    border-bottom: 0.5px solid var(--color-border-tertiary);
+}
+.cell-inn { color: #085041; }
+.cell-con { color: #3C3489; }
+.cell-inc { color: #712B13; }
+.cell-reg { color: #0C447C; }
+.bar-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0 10px 8px;
+    border-bottom: 0.5px solid var(--color-border-tertiary);
+}
+.bar-cell-last {
+    border-bottom: none;
+}
+.bar {
+    height: 12px;
+    background: #888780;
+    min-width: 2px;
+}
+.bar-label {
+    font-size: 11px;
+    color: var(--color-text-secondary);
+}
+.last-row .cell, .last-row .year, .last-row .cell-empty {
+    border-bottom: none;
+}
+.italic-muted {
+    color: var(--color-text-tertiary);
+    font-style: italic;
+}
+.era-note {
+    font-size: 11px;
+    color: var(--color-text-tertiary);
+    font-style: italic;
+    grid-column: 1 / -1;
+    padding: 14px 0 6px 0;
+    border-bottom: 0.5px solid var(--color-border-tertiary);
+}
+.footnote {
+    margin-top: 1.5rem;
+    font-size: 11px;
+    color: var(--color-text-tertiary);
+    font-style: italic;
+    max-width: 800px;
+    line-height: 1.6;
+}
+.framing {
+    background: #f7f6f1;
+    border-left: 3px solid #5F5E5A;
+    padding: 12px 16px;
+    margin-bottom: 1.5rem;
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}
+.framing strong {
+    color: var(--color-text-primary);
+    font-weight: 500;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="title-block">
+    <div class="title">Finance: the Quiet Period and the architecture of co-regulation</div>
+    <div class="subtitle">Innovations, consortiums, incidents, and regulations plotted against total US financial sector assets (real 2025 dollars)</div>
+</div>
+
+<div class="framing">
+Gary Gorton's <em>Slapped by the Invisible Hand</em> (Oxford, 2010) identifies a sharp three-phase US banking history: a <strong>panic era</strong> with systemic crises in 1873, 1884, 1890, 1893, 1896, 1907, 1914, and 1930–33; a <strong>Quiet Period</strong> from 1934 to 2007 with no systemic banking panics, sustained by deposit insurance, Glass-Steagall, and a strong regulatory perimeter; and a <strong>return of panic</strong> beginning in 2007. What Gorton and Reinhart-Rogoff understate is finance's dense middle-governance layer: <strong>self-regulatory organizations</strong> recognized under the 1934 and 1938 Acts (NYSE, NASD/FINRA, MSRB), <strong>industry utilities</strong> built post-crisis (DTCC, NSCC, FICC), and <strong>standards bodies</strong> with quasi-public authority (FASB, ISDA, ARRC). Unlike communications, where industry rules emerged largely independent of government (IETF, W3C, 3GPP), finance's consortium layer is mostly <em>co-regulatory</em>: industry-built, statutorily recognized, and supervised by federal regulators. This is the model closest to what the AI memo proposes.
+</div>
+
+<div class="grid">
+
+    <div class="h h-year">Year</div>
+    <div class="h h-inn">Innovation</div>
+    <div class="h h-con">Consortium / SRO</div>
+    <div class="h h-inc">Incident</div>
+    <div class="h h-reg">Regulation</div>
+    <div class="h h-bar">Financial sector assets (real 2025 $)</div>
+
+    <div class="era-note">Panic era (pre-1934): systemic banking panics roughly every 7–15 years</div>
+
+    <div class="year">1907</div>
+    <div class="cell cell-inn">Trust companies, shadow banking</div>
+    <div class="cell cell-con">JP Morgan bankers' pool (ad hoc)</div>
+    <div class="cell cell-inc">Panic of 1907</div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:0.5%;"></div><span class="bar-label">$0.7T</span></div>
+
+    <div class="year">1913</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-reg">Federal Reserve Act</div>
+    <div class="bar-cell"><div class="bar" style="width:0.8%;"></div><span class="bar-label">$1.2T</span></div>
+
+    <div class="year">1920s</div>
+    <div class="cell cell-inn">Margin lending, investment trusts, retail brokerage</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:2.0%;"></div><span class="bar-label">$3.0T</span></div>
+
+    <div class="year">1929</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-inc">Stock market crash</div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:2.6%;"></div><span class="bar-label">$4.0T</span></div>
+
+    <div class="year">1930–33</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-inc">Banking panic waves, ~9,000 banks fail</div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:2.7%;"></div><span class="bar-label">$4.3T</span></div>
+
+    <div class="era-note">Quiet Period (1934–2007): 73 years without a systemic banking panic; SRO architecture matures</div>
+
+    <div class="year">1933–34</div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-con">NYSE registered as SRO under '34 Act</div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-reg">Glass-Steagall, FDIC, SEC</div>
+    <div class="bar-cell"><div class="bar" style="width:2.7%;"></div><span class="bar-label">$4.3T</span></div>
+
+    <div class="year">1938–39</div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-con">NASD founded (Maloney Act)</div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-reg">Maloney Act amends '34 Act</div>
+    <div class="bar-cell"><div class="bar" style="width:2.8%;"></div><span class="bar-label">$4.5T</span></div>
+
+    <div class="year">1944</div>
+    <div class="cell cell-inn">Bretton Woods, dollar-anchored system</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:3.2%;"></div><span class="bar-label">$5.1T</span></div>
+
+    <div class="year">1971</div>
+    <div class="cell cell-inn">NASDAQ launched; Bretton Woods ends</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:11.1%;"></div><span class="bar-label">$17.4T</span></div>
+
+    <div class="year">1973</div>
+    <div class="cell cell-inn">CBOE, Black-Scholes, securitization, paperwork crisis</div>
+    <div class="cell cell-con">DTCC predecessor, FASB founded</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:12.4%;"></div><span class="bar-label">$19.5T</span></div>
+
+    <div class="year">1975</div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-con">MSRB founded</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:12.9%;"></div><span class="bar-label">$20.2T</span></div>
+
+    <div class="year">1985</div>
+    <div class="cell cell-inn">Junk bonds, LBOs, MBS market matures</div>
+    <div class="cell cell-con">ISDA founded</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:25.6%;"></div><span class="bar-label">$40.2T</span></div>
+
+    <div class="year">1988</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-reg">Basel I</div>
+    <div class="bar-cell"><div class="bar" style="width:30.2%;"></div><span class="bar-label">$47.3T</span></div>
+
+    <div class="year">1998</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-inc">LTCM near-failure</div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:47.5%;"></div><span class="bar-label">$74.6T</span></div>
+
+    <div class="year">1999</div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-con">FS-ISAC founded; DTCC consolidates</div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-reg">Gramm-Leach-Bliley (repeals Glass-Steagall)</div>
+    <div class="bar-cell"><div class="bar" style="width:51.4%;"></div><span class="bar-label">$80.7T</span></div>
+
+    <div class="year">2001–02</div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-con">PCAOB created</div>
+    <div class="cell cell-inc">Enron, WorldCom collapses</div>
+    <div class="cell cell-reg">Sarbanes-Oxley Act</div>
+    <div class="bar-cell"><div class="bar" style="width:56.4%;"></div><span class="bar-label">$88.5T</span></div>
+
+    <div class="year">2003–07</div>
+    <div class="cell cell-inn">CDOs, CDS, repo markets balloon</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:73.7%;"></div><span class="bar-label">$115.8T</span></div>
+
+    <div class="era-note">Return of panic (2007–present): shadow banking outside the regulated perimeter triggers systemic failure</div>
+
+    <div class="year">2007</div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-con">FINRA formed (NASD + NYSE Reg)</div>
+    <div class="cell cell-inc">Subprime crisis begins; Bear Stearns</div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:73.7%;"></div><span class="bar-label">$115.8T</span></div>
+
+    <div class="year">2008</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-inc">Lehman fails; AIG bailout</div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:68.2%;"></div><span class="bar-label">$107.0T</span></div>
+
+    <div class="year">2010</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-reg">Dodd-Frank Act</div>
+    <div class="bar-cell"><div class="bar" style="width:70.1%;"></div><span class="bar-label">$110.0T</span></div>
+
+    <div class="year">2014</div>
+    <div class="cell cell-inn">ETFs and passive investing scale; algorithmic trading</div>
+    <div class="cell cell-con">ARRC (LIBOR transition)</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:81.8%;"></div><span class="bar-label">$128.4T</span></div>
+
+    <div class="year last-row" style="border-bottom:none;">2025</div>
+    <div class="cell last-row italic-muted" style="border-bottom:none;">(present)</div>
+    <div class="cell-empty last-row" style="border-bottom:none;"></div>
+    <div class="cell-empty last-row" style="border-bottom:none;"></div>
+    <div class="cell-empty last-row" style="border-bottom:none;"></div>
+    <div class="bar-cell bar-cell-last"><div class="bar" style="width:100%;"></div><span class="bar-label">$157T</span></div>
+
+</div>
+
+<div class="footnote">
+Frameworks: Gary B. Gorton, <em>Slapped by the Invisible Hand: The Panic of 2007</em> (Oxford, 2010); Carmen M. Reinhart and Kenneth S. Rogoff, <em>This Time Is Different: Eight Centuries of Financial Folly</em> (Princeton, 2009); Charles W. Calomiris and Stephen H. Haber, <em>Fragile by Design</em> (Princeton, 2014). The middle-governance layer is documented in <em>The Institution of Experience: Self-Regulatory Organizations in the Securities Industry, 1792–2010</em>, SEC Historical Society virtual museum. Pre-1934 panics not individually shown: 1873, 1884, 1890, 1893, 1896, 1914 (Gorton's enumeration). System-size data: 1945–present from Federal Reserve Z.1 release, "Domestic Financial Sectors; Total Financial Assets" (FBTFASQ027S); pre-1945 estimated from Raymond Goldsmith, <em>Financial Intermediaries in the American Economy Since 1900</em> (Princeton, 1958). All figures converted to real 2025 dollars using CPI-U. Total includes commercial banks, mutual funds and ETFs, broker-dealers, insurance companies, GSEs, money market funds, asset-backed issuers, pension funds, and other intermediaries; gross of cross-sector claims.
+</div>
+
+</div>
+</body>
+</html>

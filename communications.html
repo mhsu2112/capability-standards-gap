@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Communications: four lanes against a system that grew through three Spar cycles</title>
+<style>
+:root {
+    --color-text-primary: #1a1a1a;
+    --color-text-secondary: #5f5e5a;
+    --color-text-tertiary: #888780;
+    --color-border-tertiary: rgba(0,0,0,0.10);
+    --color-border-secondary: rgba(0,0,0,0.20);
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #fdfdfd;
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+    font-size: 13px;
+    line-height: 1.5;
+}
+body {
+    padding: 2rem 1.5rem;
+}
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.title-block {
+    margin-bottom: 1.5rem;
+}
+.title {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: var(--color-text-primary);
+}
+.subtitle {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+}
+.grid {
+    display: grid;
+    grid-template-columns: 70px 180px 180px 200px 180px minmax(180px, 1fr);
+    gap: 0;
+    align-items: stretch;
+}
+.h {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 0 0 10px 8px;
+    border-bottom: 0.5px solid var(--color-border-secondary);
+}
+.h-year { padding-left: 0; color: var(--color-text-secondary); }
+.h-inn { color: #085041; }
+.h-con { color: #3C3489; }
+.h-inc { color: #712B13; }
+.h-reg { color: #0C447C; }
+.h-bar { color: var(--color-text-secondary); }
+.year {
+    font-size: 13px;
+    padding: 10px 0;
+    border-bottom: 0.5px solid var(--color-border-tertiary);
+    color: var(--color-text-secondary);
+}
+.cell {
+    font-size: 13px;
+    padding: 10px 0 10px 8px;
+    border-bottom: 0.5px solid var(--color-border-tertiary);
+}
+.cell-empty {
+    border-bottom: 0.5px solid var(--color-border-tertiary);
+}
+.cell-inn { color: #085041; }
+.cell-con { color: #3C3489; }
+.cell-inc { color: #712B13; }
+.cell-reg { color: #0C447C; }
+.bar-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0 10px 8px;
+    border-bottom: 0.5px solid var(--color-border-tertiary);
+}
+.bar-cell-last {
+    border-bottom: none;
+}
+.bar {
+    height: 12px;
+    background: #888780;
+    min-width: 2px;
+}
+.bar-label {
+    font-size: 11px;
+    color: var(--color-text-secondary);
+}
+.last-row .cell, .last-row .year, .last-row .cell-empty {
+    border-bottom: none;
+}
+.italic-muted {
+    color: var(--color-text-tertiary);
+    font-style: italic;
+}
+.era-note {
+    font-size: 11px;
+    color: var(--color-text-tertiary);
+    font-style: italic;
+    grid-column: 1 / -1;
+    padding: 14px 0 6px 0;
+    border-bottom: 0.5px solid var(--color-border-tertiary);
+}
+.footnote {
+    margin-top: 1.5rem;
+    font-size: 11px;
+    color: var(--color-text-tertiary);
+    font-style: italic;
+    max-width: 800px;
+    line-height: 1.6;
+}
+.framing {
+    background: #f7f6f1;
+    border-left: 3px solid #5F5E5A;
+    padding: 12px 16px;
+    margin-bottom: 1.5rem;
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}
+.framing strong {
+    color: var(--color-text-primary);
+    font-weight: 500;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="title-block">
+    <div class="title">Communications: three Spar cycles, with industry rule-making increasingly dominant</div>
+    <div class="subtitle">Innovations, consortiums, incidents, and regulations plotted against US connected endpoints</div>
+</div>
+
+<div class="framing">
+Debora Spar's <em>Ruling the Waves</em> argues that new communications technologies pass through four phases: <strong>innovation</strong>, <strong>commercialization</strong>, <strong>creative anarchy</strong>, and <strong>rules</strong>. The rules phase, she notes, is built from both government regulation and industry-led property rights and standards. Splitting those two kinds of rules into separate lanes (Consortium and Regulation) reveals a shift across the three communications cycles: rule-making moved from state-led (telegraph) to mixed (radio) to predominantly industry-led (internet).
+</div>
+
+<div class="grid">
+
+    <div class="h h-year">Year</div>
+    <div class="h h-inn">Innovation</div>
+    <div class="h h-con">Consortium / industry rules</div>
+    <div class="h h-inc">Incident / chaos</div>
+    <div class="h h-reg">Regulation</div>
+    <div class="h h-bar">Endpoints (US)</div>
+
+    <div class="era-note">Cycle 1 — Telegraph (1844–1888): state-led rulemaking after monopoly consolidation</div>
+
+    <div class="year">1844</div>
+    <div class="cell cell-inn">Morse opens first line</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:0.1%;"></div><span class="bar-label">~0</span></div>
+
+    <div class="year">1850s</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-inc">Patent wars, competing standards</div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:0.1%;"></div><span class="bar-label">~0</span></div>
+
+    <div class="year">1866</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-inc">Western Union consolidates monopoly</div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:0.1%;"></div><span class="bar-label">~0</span></div>
+
+    <div class="year">1888</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-reg">ICC jurisdiction over telegraph</div>
+    <div class="bar-cell"><div class="bar" style="width:0.1%;"></div><span class="bar-label">~0</span></div>
+
+    <div class="era-note">Cycle 2 — Telephone &amp; radio (1876–1934): failed industry coordination, then comprehensive regulation</div>
+
+    <div class="year">1876</div>
+    <div class="cell cell-inn">Bell patents telephone</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:0.2%;"></div><span class="bar-label">3K</span></div>
+
+    <div class="year">1907</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-inc">AT&amp;T monopoly concerns build</div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:0.3%;"></div><span class="bar-label">6M</span></div>
+
+    <div class="year">1912</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-inc">Titanic radio failures</div>
+    <div class="cell cell-reg">Radio Act of 1912</div>
+    <div class="bar-cell"><div class="bar" style="width:0.4%;"></div><span class="bar-label">8M</span></div>
+
+    <div class="year">1913</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-reg">Kingsbury Commitment (AT&amp;T)</div>
+    <div class="bar-cell"><div class="bar" style="width:0.5%;"></div><span class="bar-label">9M</span></div>
+
+    <div class="year">1920</div>
+    <div class="cell cell-inn">Commercial radio begins</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:0.7%;"></div><span class="bar-label">13M</span></div>
+
+    <div class="year">1922–25</div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-con">Hoover Radio Conferences (failed)</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:0.8%;"></div><span class="bar-label">15M</span></div>
+
+    <div class="year">1926</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-inc">"Etheric bedlam" — signal chaos</div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:1.0%;"></div><span class="bar-label">20M</span></div>
+
+    <div class="year">1927</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-reg">Radio Act, FRC created</div>
+    <div class="bar-cell"><div class="bar" style="width:1.1%;"></div><span class="bar-label">22M</span></div>
+
+    <div class="year">1934</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-reg">Communications Act, FCC</div>
+    <div class="bar-cell"><div class="bar" style="width:1.7%;"></div><span class="bar-label">35M</span></div>
+
+    <div class="era-note">Cycle 3 — Internet &amp; mobile (1969–present): industry-led rule-making dominates</div>
+
+    <div class="year">1969</div>
+    <div class="cell cell-inn">ARPANET first nodes</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:10.0%;"></div><span class="bar-label">200M</span></div>
+
+    <div class="year">1983</div>
+    <div class="cell cell-inn">TCP/IP standardized</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:13.0%;"></div><span class="bar-label">260M</span></div>
+
+    <div class="year">1984</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-reg">AT&amp;T breakup (MFJ)</div>
+    <div class="bar-cell"><div class="bar" style="width:13.8%;"></div><span class="bar-label">275M</span></div>
+
+    <div class="year">1986</div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-con">IETF founded</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:14.3%;"></div><span class="bar-label">285M</span></div>
+
+    <div class="year">1988</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-inc">Morris Worm</div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:14.5%;"></div><span class="bar-label">290M</span></div>
+
+    <div class="year">1991</div>
+    <div class="cell cell-inn">Web invented (CERN)</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:14.5%;"></div><span class="bar-label">290M</span></div>
+
+    <div class="year">1994</div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-con">W3C founded</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:14.5%;"></div><span class="bar-label">290M</span></div>
+
+    <div class="year">1996</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-reg">Telecommunications Act</div>
+    <div class="bar-cell"><div class="bar" style="width:16.0%;"></div><span class="bar-label">320M</span></div>
+
+    <div class="year">1998</div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-con">3GPP founded</div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-reg">DMCA</div>
+    <div class="bar-cell"><div class="bar" style="width:18.0%;"></div><span class="bar-label">360M</span></div>
+
+    <div class="year">2007</div>
+    <div class="cell cell-inn">iPhone, smartphone era</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:31.0%;"></div><span class="bar-label">620M</span></div>
+
+    <div class="year">2013</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-inc">Snowden revelations</div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:35.0%;"></div><span class="bar-label">700M</span></div>
+
+    <div class="year">2024</div>
+    <div class="cell-empty"></div>
+    <div class="cell-empty"></div>
+    <div class="cell cell-inc">CrowdStrike outage</div>
+    <div class="cell-empty"></div>
+    <div class="bar-cell"><div class="bar" style="width:99.0%;"></div><span class="bar-label">~2B</span></div>
+
+    <div class="year last-row" style="border-bottom:none;">2025</div>
+    <div class="cell last-row italic-muted" style="border-bottom:none;">(present)</div>
+    <div class="cell-empty last-row" style="border-bottom:none;"></div>
+    <div class="cell-empty last-row" style="border-bottom:none;"></div>
+    <div class="cell-empty last-row" style="border-bottom:none;"></div>
+    <div class="bar-cell bar-cell-last"><div class="bar" style="width:100%;"></div><span class="bar-label">~2B</span></div>
+
+</div>
+
+<div class="footnote">
+Framework: Debora L. Spar, <em>Ruling the Waves: From the Compass to the Internet</em> (Harcourt, 2001). Spar's "creative anarchy" phase populates the Incident column; her "rules" phase splits across the Consortium and Regulation columns to make visible whether order arrived from industry or the state. Endpoint data: pre-1934 from FCC and Census historical statistics (telephones, radios); 1934–1996 from FCC Statistics of Communications Common Carriers and broadcasting industry reports; 1996–present from ITU and Pew Research (mobile subscribers, internet users, smart devices). Modern figure includes IoT and connected devices. Bar widths use a linear scale; very small bars (telegraph era and early phones) are floored at 2px for visibility.
+</div>
+
+</div>
+</body>
+</html>
