@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Overview: capability, adoption, and regulation — four industries, four shapes</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --color-text-primary: #1a1a1a;
+    --color-text-secondary: #5f5e5a;
+    --color-text-tertiary: #888780;
+    --color-border-tertiary: rgba(0,0,0,0.10);
+    --color-border-secondary: rgba(0,0,0,0.20);
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+
+    /* Sketch palette — maps to the four lanes in the SVG panels */
+    --cap:   #1e6fcf; /* capability  */
+    --adopt: #e89a2a; /* adoption    */
+    --reg:   #c83a3a; /* regulation  */
+    --ind:   #2b8a5a; /* industry / consortium (comms only) */
+    --faint: var(--color-text-tertiary);
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #fdfdfd;
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+    font-size: 13px;
+    line-height: 1.5;
+}
+body {
+    padding: 2rem 1.5rem;
+}
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.crumb {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    margin-bottom: 1rem;
+}
+.crumb a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+}
+.crumb a:hover { text-decoration: underline; }
+.title-block {
+    margin-bottom: 1.5rem;
+}
+.title {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: var(--color-text-primary);
+}
+.subtitle {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+}
+.framing {
+    background: #f7f6f1;
+    border-left: 3px solid #5F5E5A;
+    padding: 12px 16px;
+    margin-bottom: 1.5rem;
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}
+.framing strong {
+    color: var(--color-text-primary);
+    font-weight: 500;
+}
+.framing em { color: var(--color-text-primary); font-style: italic; }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+@media (max-width: 920px) { .grid { grid-template-columns: 1fr; } }
+
+.panel {
+    background: #fff;
+    border: 1px solid var(--color-border-tertiary);
+    border-radius: 6px;
+    padding: 16px 16px 14px;
+}
+.panel h2 {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 0 2px;
+    color: var(--color-text-primary);
+}
+.panel .sub {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    margin: 0 0 8px;
+}
+.panel svg { display: block; width: 100%; height: auto; }
+.caption {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    margin-top: 10px;
+    line-height: 1.55;
+}
+.caption strong { color: var(--color-text-primary); font-weight: 500; }
+.caption em { color: var(--color-text-primary); font-style: italic; }
+
+/* hand-drawn aesthetic — Caveat only on the SVG sketches */
+.hand text { font-family: "Caveat", cursive; }
+.axis { stroke: var(--color-text-primary); stroke-width: 2; fill: none; stroke-linecap: round; }
+.line { fill: none; stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; }
+.line-cap { stroke: var(--cap); }
+.line-adopt { stroke: var(--adopt); }
+.line-reg { stroke: var(--reg); }
+.line-ind { stroke: var(--ind); }
+.dashed { stroke-dasharray: 6 7; }
+.label { font-size: 22px; font-weight: 700; }
+.label-cap { fill: var(--cap); }
+.label-adopt { fill: var(--adopt); }
+.label-reg { fill: var(--reg); }
+.label-ind { fill: var(--ind); }
+.tick { font-family: "Caveat", cursive; font-size: 14px; fill: var(--faint); }
+.marker { fill: var(--reg); }
+.marker-note {
+    font-family: "Caveat", cursive;
+    font-size: 13px;
+    fill: var(--color-text-secondary);
+}
+
+.legend-block {
+    margin-top: 1.75rem;
+    padding: 14px 18px;
+    background: #f7f6f1;
+    border-left: 3px solid var(--color-text-secondary);
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}
+.legend-block strong { color: var(--color-text-primary); font-weight: 500; }
+.legend-block em { color: var(--color-text-primary); font-style: italic; }
+.swatch {
+    display: inline-block;
+    width: 22px;
+    height: 3px;
+    vertical-align: middle;
+    margin-right: 4px;
+    border-radius: 2px;
+}
+
+.footnote {
+    margin-top: 1.5rem;
+    font-size: 11px;
+    color: var(--color-text-tertiary);
+    font-style: italic;
+    max-width: 800px;
+    line-height: 1.6;
+}
+.footnote a { color: var(--color-text-tertiary); }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="crumb"><a href="index.html">&lt; capability-standards-gap</a></div>
+
+<div class="title-block">
+    <div class="title">Overview: capability, adoption, and regulation — four industries, four shapes</div>
+    <div class="subtitle">A synthesis sketch across the four sector pages. Illustrative shapes, not literal data.</div>
+</div>
+
+<div class="framing">
+The thesis: <em>capability</em>, <em>adoption</em>, and <em>regulation</em> develop at different rates, and the shape of the gap between them is what shapes industry trajectory — sometimes through crisis, sometimes through arrested growth, sometimes through quiet periods. The four panels below are hand-drawn sketches of those shapes, meant to be read against the literal timelines in <a href="aviation.html">aviation</a>, <a href="communications.html">communications</a>, <a href="finance.html">finance</a>, and <a href="nuclear.html">nuclear</a>.
+</div>
+
+<div class="grid">
+
+  <!-- ============================================================
+       AVIATION — Tombstone pattern: regulation as step function
+       ============================================================ -->
+  <div class="panel">
+    <h2>Aviation — the tombstone pattern</h2>
+    <p class="sub">Regulation moves only after fatal incidents. Gap reopens between crashes.</p>
+    <svg class="hand" viewBox="0 0 600 380" xmlns="http://www.w3.org/2000/svg">
+      <!-- axes -->
+      <path class="axis" d="M 60 30 L 60 330 L 560 330"/>
+      <text class="tick" x="64" y="345">1903</text>
+      <text class="tick" x="540" y="345">today</text>
+
+      <!-- Capability: smooth steep rise (DC-3, 707, 747, MAX...) -->
+      <path class="line line-cap" d="M 65 320 C 180 280, 280 180, 360 110 S 520 50, 555 38"/>
+      <text class="label label-cap" x="500" y="32">Capability</text>
+
+      <!-- Adoption (RPMs): smooth rise, slightly below -->
+      <path class="line line-adopt" d="M 65 322 C 180 305, 280 240, 360 175 S 520 100, 555 88"/>
+      <text class="label label-adopt" x="510" y="98">Adoption</text>
+
+      <!-- Regulation: step function — jumps at each crash -->
+      <path class="line line-reg" d="
+        M 65 325
+        L 130 325
+        L 130 305
+        L 195 305
+        L 195 255
+        L 250 255
+        L 250 240
+        L 320 240
+        L 320 215
+        L 385 215
+        L 385 175
+        L 460 175
+        L 460 155
+        L 525 155
+        L 525 140
+        L 555 140"/>
+      <text class="label label-reg" x="505" y="158">Regulation</text>
+
+      <!-- crash markers (tombstones) -->
+      <g>
+        <circle class="marker" cx="195" cy="305" r="3.5"/>
+        <text class="marker-note" x="180" y="298">Grand Canyon '56</text>
+        <circle class="marker" cx="250" cy="255" r="3.5"/>
+        <text class="marker-note" x="240" y="248">'67</text>
+        <circle class="marker" cx="385" cy="215" r="3.5"/>
+        <text class="marker-note" x="350" y="208">ValuJet '96</text>
+        <circle class="marker" cx="525" cy="155" r="3.5"/>
+        <text class="marker-note" x="475" y="170">737 MAX</text>
+      </g>
+    </svg>
+    <p class="caption">
+      <strong>Shape:</strong> regulation moves as a staircase, each step tied to a tombstone.
+      The gap between adoption and regulation widens silently, then snaps closed at each crash.
+      The <em>anti-tombstone</em> exceptions — ARINC, RTCA, CAST — show what pre-incident coordination
+      could have looked like.
+    </p>
+  </div>
+
+  <!-- ============================================================
+       COMMUNICATIONS — Spar cycles: industry rule-making takes over
+       ============================================================ -->
+  <div class="panel">
+    <h2>Communications — industry rule-making takes over</h2>
+    <p class="sub">Three Spar cycles; the source of "rules" shifts from state to industry.</p>
+    <svg class="hand" viewBox="0 0 600 380" xmlns="http://www.w3.org/2000/svg">
+      <path class="axis" d="M 60 30 L 60 330 L 560 330"/>
+      <text class="tick" x="64" y="345">1844</text>
+      <text class="tick" x="260" y="345">radio</text>
+      <text class="tick" x="380" y="345">internet</text>
+      <text class="tick" x="540" y="345">today</text>
+
+      <!-- Capability: J-curve, blowing up after 1990 -->
+      <path class="line line-cap" d="M 65 325 C 200 320, 310 295, 380 220 S 510 60, 555 38"/>
+      <text class="label label-cap" x="495" y="32">Capability</text>
+
+      <!-- Adoption: just behind capability -->
+      <path class="line line-adopt" d="M 65 327 C 200 322, 310 308, 380 250 S 510 100, 555 78"/>
+      <text class="label label-adopt" x="500" y="88">Adoption</text>
+
+      <!-- Regulation: rises early (1912, 1927, 1934) then flattens -->
+      <path class="line line-reg" d="
+        M 65 327
+        L 180 327
+        L 180 290
+        L 220 290
+        L 220 250
+        L 260 250
+        L 260 220
+        L 360 215
+        L 555 200"/>
+      <text class="label label-reg" x="480" y="218">Regulation</text>
+
+      <!-- Industry consortium (4th line): starts later, rises to nearly match capability -->
+      <path class="line line-ind" d="
+        M 65 328
+        L 250 327
+        C 320 320, 380 240, 430 160
+        S 530 70, 555 55"/>
+      <text class="label label-ind" x="430" y="98">Industry</text>
+
+      <!-- era separators -->
+      <line x1="220" y1="40" x2="220" y2="330" stroke="#cccac3" stroke-width="1" stroke-dasharray="2 4"/>
+      <line x1="360" y1="40" x2="360" y2="330" stroke="#cccac3" stroke-width="1" stroke-dasharray="2 4"/>
+    </svg>
+    <p class="caption">
+      <strong>Shape:</strong> capability and adoption ride an exponential. Regulation rises in the
+      telegraph / radio cycles, then flattens — the state stops being the primary rule-maker.
+      What fills the gap is the green line: <em>industry rules</em> (IETF, W3C, 3GPP), which
+      track capability much more closely than statute does.
+    </p>
+  </div>
+
+  <!-- ============================================================
+       FINANCE — Quiet Period: co-regulation closes the gap, 1934-2007
+       ============================================================ -->
+  <div class="panel">
+    <h2>Finance — the Quiet Period closed the gap</h2>
+    <p class="sub">Co-regulation tracked capability for 73 years; shadow banking reopened it.</p>
+    <svg class="hand" viewBox="0 0 600 380" xmlns="http://www.w3.org/2000/svg">
+      <path class="axis" d="M 60 30 L 60 330 L 560 330"/>
+      <text class="tick" x="64" y="345">1907</text>
+      <text class="tick" x="170" y="345">1934</text>
+      <text class="tick" x="430" y="345">2007</text>
+      <text class="tick" x="540" y="345">today</text>
+
+      <!-- Capability: rising line; small jaggedness pre-1934 (panics), then smooth, then accelerates -->
+      <path class="line line-cap" d="
+        M 65 305
+        L 95 290 L 110 305 L 130 280 L 150 295
+        L 180 240
+        C 250 200, 350 150, 430 120
+        C 480 110, 530 60, 555 40"/>
+      <text class="label label-cap" x="495" y="34">Capability</text>
+
+      <!-- Adoption: just below capability, same shape -->
+      <path class="line line-adopt" d="
+        M 65 315
+        L 95 305 L 110 318 L 130 295 L 150 310
+        L 180 260
+        C 250 222, 350 175, 430 145
+        C 480 138, 530 95, 555 80"/>
+      <text class="label label-adopt" x="500" y="92">Adoption</text>
+
+      <!-- Regulation: way behind in panic era, then snaps up in 1934 and TRACKS closely, then lags again post-2007 -->
+      <path class="line line-reg" d="
+        M 65 327
+        L 175 327
+        L 180 265
+        C 250 230, 350 185, 430 155
+        L 460 150
+        C 490 148, 530 142, 555 138"/>
+      <text class="label label-reg" x="490" y="155">Regulation + SROs</text>
+
+      <!-- shaded "Quiet Period" band -->
+      <rect x="180" y="38" width="250" height="290" fill="#2b8a5a" opacity="0.05"/>
+      <text class="marker-note" x="240" y="55" fill="var(--color-text-secondary)">Quiet Period (1934–2007)</text>
+
+      <!-- 2007 marker -->
+      <circle class="marker" cx="430" cy="145" r="3.5"/>
+      <text class="marker-note" x="395" y="138">'08 crisis</text>
+    </svg>
+    <p class="caption">
+      <strong>Shape:</strong> three lines that converged in 1934 and held together for 73 years —
+      the rarest pattern. The middle-governance layer (NYSE, NASD/FINRA, FASB, DTCC, ISDA) is what
+      kept regulation close to capability. The gap reopened only when capability moved <em>outside the
+      regulated perimeter</em> into shadow banking.
+    </p>
+  </div>
+
+  <!-- ============================================================
+       NUCLEAR — Negative case: capability without adoption
+       ============================================================ -->
+  <div class="panel">
+    <h2>Nuclear — capability without adoption</h2>
+    <p class="sub">Regulation became friction; adoption arrested at ~10% of projected.</p>
+    <svg class="hand" viewBox="0 0 600 380" xmlns="http://www.w3.org/2000/svg">
+      <path class="axis" d="M 60 30 L 60 330 L 560 330"/>
+      <text class="tick" x="64" y="345">1953</text>
+      <text class="tick" x="280" y="345">TMI '79</text>
+      <text class="tick" x="540" y="345">today</text>
+
+      <!-- Capability (projected): steep rise, continues dashed -->
+      <path class="line line-cap" d="M 65 325 C 180 290, 240 230, 290 175"/>
+      <path class="line line-cap dashed" d="M 290 175 C 360 130, 470 70, 555 38"/>
+      <text class="label label-cap" x="430" y="60">Capability</text>
+      <text class="marker-note" x="430" y="78" fill="var(--cap)">(projected)</text>
+
+      <!-- Adoption: rises through 1970s, plateaus, slight decline -->
+      <path class="line line-adopt" d="
+        M 65 325
+        C 180 305, 240 240, 290 195
+        L 360 175
+        C 430 175, 500 185, 555 188"/>
+      <text class="label label-adopt" x="490" y="205">Adoption</text>
+
+      <!-- Regulation: low until 1979, then jumps up sharply and stays high — becomes a ceiling -->
+      <path class="line line-reg" d="
+        M 65 325
+        L 280 310
+        L 290 180
+        C 340 150, 430 130, 555 120"/>
+      <text class="label label-reg" x="475" y="118">Regulation</text>
+
+      <!-- TMI marker -->
+      <circle class="marker" cx="290" cy="180" r="3.5"/>
+      <text class="marker-note" x="265" y="172">TMI + INPO</text>
+
+      <!-- the gap -->
+      <path d="M 480 75 L 480 188" stroke="var(--faint)" stroke-width="1" stroke-dasharray="3 4"/>
+      <text class="marker-note" x="486" y="135" fill="var(--color-text-secondary)">unrealized</text>
+      <text class="marker-note" x="486" y="150" fill="var(--color-text-secondary)">gap</text>
+    </svg>
+    <p class="caption">
+      <strong>Shape:</strong> the inverse pathology — capability outran adoption and never came back.
+      Regulation, post-TMI, became a ceiling rather than a guardrail. INPO worked as a tombstone
+      consortium for operational safety but was scoped too narrowly to address licensing, siting,
+      or capital-cost compounding. The middle layer that worked in finance never cohered here.
+    </p>
+  </div>
+
+</div>
+
+<div class="legend-block">
+  <strong>Reading the shapes.</strong>
+  &nbsp;<span class="swatch" style="background:var(--cap)"></span> capability
+  &nbsp;<span class="swatch" style="background:var(--adopt)"></span> adoption
+  &nbsp;<span class="swatch" style="background:var(--reg)"></span> regulation
+  &nbsp;<span class="swatch" style="background:var(--ind)"></span> industry / consortium (where it shows up).
+  The gap between curves is the unit of analysis. In <strong>aviation</strong>, the regulation curve
+  is a staircase tied to fatalities. In <strong>communications</strong>, a fourth line — industry
+  rule-making — supplies the order the state stopped providing. In <strong>finance</strong>, the
+  three lines actually tracked together for most of a century thanks to co-regulatory SROs;
+  the gap only reopened when capability migrated outside the perimeter. In <strong>nuclear</strong>,
+  regulation rose above adoption and adoption stalled — the pathology of a missing or
+  too-narrow middle-governance layer.
+</div>
+
+<div class="footnote">
+Illustrative sketches, not literal data. The shapes synthesize the timelines on <a href="aviation.html">aviation.html</a>, <a href="communications.html">communications.html</a>, <a href="finance.html">finance.html</a>, and <a href="nuclear.html">nuclear.html</a> in this repo — see those pages for sourced events, dates, and the underlying systems-size series. Hand-drawn labels use Caveat; literal text uses the same system font stack as the four sector pages.
+</div>
+
+</div>
+</body>
+</html>
